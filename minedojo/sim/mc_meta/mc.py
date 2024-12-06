@@ -495,13 +495,15 @@ MAX_SCORE = 0x7FFFFF  # Implemented as XP in survival but can change e.g. mini-g
 
 def get_item_id(item: str) -> int:
     """
-    Gets the item ID of an MC item.
-    :param item: The item string
-    :return: The internal ID of the item.
+    获取MC物品的ID
+    :param item: 物品字符串 (例如 "diamond" 或 "minecraft:diamond")
+    :return: 该物品在MC_ITEM_IDS中的索引位置
     """
+    # 如果物品名称没有"minecraft:"前缀，就添加它
     if not item.startswith("minecraft:"):
         item = "minecraft:" + item
-
+        
+    # 返回该物品在列表中的位置作为ID
     return MC_ITEM_IDS.index(item)
 
 
