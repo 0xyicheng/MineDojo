@@ -1,12 +1,12 @@
 import minedojo
 
-
 if __name__ == "__main__":
     env = minedojo.make(
         task_id="combat_spider_plains_leather_armors_diamond_sword_shield",
         image_size=(288, 512),
         world_seed=123,
         seed=42,
+        event_level_control=True
     )
 
     print(f"[INFO] Create a task with prompt: {env.task_prompt}")
